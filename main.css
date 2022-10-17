@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Xolonium;
+    font-size: x-large;
+
+    color: #f9f9f9;
+}
+
+main {
+    width: 100vw;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+}
+
+section.alfa {
+    position: fixed;
+    top: 0vh;
+
+    z-index: 3;
+
+    transition: top 1s;
+}
+
+input[type=radio]#sectionB:checked ~ section.alfa {
+    top: -100vh;
+}
+
+input[type=radio]#sectionB:checked ~ section.alfa > div > label {
+    display: none;
+}
+
+section.bravo {
+    position: fixed;
+    top: 0vh;
+
+    z-index: 2;
+
+    transition: top 1s;
+}
+
+
+input[type=radio]#sectionC:checked ~ section.alfa {
+    top: -100vh;
+}
+input[type=radio]#sectionC:checked ~ section.bravo {
+    top: -100vh;
+}
+
+section.charlie {
+    position: fixed;
+    top: 0vh;
+
+    z-index: 1;
+}
+
+div {
+    height: 100%;
+    width: 50%;
+
+    background: #333333;
+}
+
+.divisionL {
+    float: left;
+}
+
+.divisionR {
+    float: right;
+}
+
+section.alfa > .divisionL {
+    background-image: url(../images/sectionA-divisionL.jpg);
+    background-size: cover;
+}
+
+section.bravo > .divisionR {
+    background-image: url(../images/sectionA-divisionL.jpg);
+    background-size: cover;
+}
+
+section.charlie > .divisionL {
+    background-color: #f9f9f9;
+    background-image: url(../images/logo.svg);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+h1, label {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    height: 85%;
+}
+
+label {
+    height: 15%;
+
+    margin: auto;
+    background: #333333;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+label > img {
+    height: 50%;
+
+    animation-name: bgColorChange;
+    animation-duration: 3s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes bgColorChange {
+    from {
+        background-color: #ec1313;
+    }
+
+    to {
+        background-color: #f2f2f2;
+    }
+    
+}
+
+section.charlie > .divisionR > h1 {
+    height: 100%;
+}
